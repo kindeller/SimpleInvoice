@@ -16,5 +16,20 @@ namespace SimpleInvoice
         {
             InitializeComponent();
         }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            picBackground.Image = Properties.Resources.green;
+        }
+
+        private void goldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            picBackground.Image = Properties.Resources.gold;
+        }
+
+        private void steelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            picBackground.Image = Properties.Resources.steel;
+        }
     }
 }

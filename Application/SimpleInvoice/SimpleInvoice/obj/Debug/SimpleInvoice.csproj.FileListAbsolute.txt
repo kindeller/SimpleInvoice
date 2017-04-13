@@ -1,1 +1,9 @@
 G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\bin\Debug\SimpleInvoice.exe.config
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\bin\Debug\SimpleInvoice.exe
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\bin\Debug\SimpleInvoice.pdb
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.csprojResolveAssemblyReference.cache
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.Form1.resources
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.Properties.Resources.resources
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.csproj.GenerateResource.Cache
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.exe
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.pdb

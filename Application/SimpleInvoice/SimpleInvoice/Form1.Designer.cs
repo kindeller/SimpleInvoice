@@ -107,18 +107,21 @@
             this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
             this.greenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.greenToolStripMenuItem.Text = "Green";
+            this.greenToolStripMenuItem.Click += new System.EventHandler(this.greenToolStripMenuItem_Click);
             // 
             // goldToolStripMenuItem
             // 
             this.goldToolStripMenuItem.Name = "goldToolStripMenuItem";
             this.goldToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.goldToolStripMenuItem.Text = "Gold";
+            this.goldToolStripMenuItem.Click += new System.EventHandler(this.goldToolStripMenuItem_Click);
             // 
             // steelToolStripMenuItem
             // 
             this.steelToolStripMenuItem.Name = "steelToolStripMenuItem";
             this.steelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.steelToolStripMenuItem.Text = "Steel";
+            this.steelToolStripMenuItem.Click += new System.EventHandler(this.steelToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -345,6 +348,7 @@
             this.picBackground.Location = new System.Drawing.Point(0, 0);
             this.picBackground.Name = "picBackground";
             this.picBackground.Size = new System.Drawing.Size(803, 503);
+            this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBackground.TabIndex = 32;
             this.picBackground.TabStop = false;
             // 
