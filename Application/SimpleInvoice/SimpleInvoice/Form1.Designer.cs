@@ -169,6 +169,7 @@
             this.btnCustomerAdd.TabIndex = 11;
             this.btnCustomerAdd.Text = "Add";
             this.btnCustomerAdd.UseVisualStyleBackColor = true;
+            this.btnCustomerAdd.Click += new System.EventHandler(this.btnCustomerAdd_Click);
             // 
             // btnCustomerUpdate
             // 
@@ -178,6 +179,7 @@
             this.btnCustomerUpdate.TabIndex = 12;
             this.btnCustomerUpdate.Text = "Update";
             this.btnCustomerUpdate.UseVisualStyleBackColor = true;
+            this.btnCustomerUpdate.Click += new System.EventHandler(this.btnCustomerUpdate_Click);
             // 
             // label6
             // 
@@ -207,6 +209,7 @@
             this.btnInvoiceUpdate.TabIndex = 25;
             this.btnInvoiceUpdate.Text = "Update";
             this.btnInvoiceUpdate.UseVisualStyleBackColor = true;
+            this.btnInvoiceUpdate.Click += new System.EventHandler(this.btnInvoiceUpdate_Click);
             // 
             // btnInvoiceAdd
             // 
@@ -216,6 +219,7 @@
             this.btnInvoiceAdd.TabIndex = 24;
             this.btnInvoiceAdd.Text = "Add";
             this.btnInvoiceAdd.UseVisualStyleBackColor = true;
+            this.btnInvoiceAdd.Click += new System.EventHandler(this.btnInvoiceAdd_Click);
             // 
             // label10
             // 

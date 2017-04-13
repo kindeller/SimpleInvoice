@@ -21,7 +21,26 @@ namespace SimpleInvoice
             initData();
         }
 
+        private void addCustomer(Customer customer)
+        {
+            GrowCustomerArray();
+            //add customer in last slot;
+            CustomerList[CustomerList.Length - 1] = customer;
 
+        }
+
+        private void GrowCustomerArray()
+        {
+            //copy array
+            Customer[] tempCustomerList = CustomerList;
+            //resize
+            CustomerList = new Customer[CustomerList.Length + 1];
+            //readd values
+            for(int id = 0; id < tempCustomerList.Length; id++)
+            {
+                CustomerList[id] = tempCustomerList[id];
+            }
+        }
 
 
 
@@ -30,7 +49,7 @@ namespace SimpleInvoice
         private void initData()
         {
 
-            Customer cust = new Customer(1, "frank", "Underwood", 0800909090, new string[] { "1", "something way", "Funkytown", "awesome land" });
+            Customer cust = new Customer(1, "frank", "Underwood", 0800909090, "1 something way, Funkytown, awesome land");
             CustomerList[0] = cust;
 
             Invoice inv = new Invoice(1, 1, 20.99, new DateTime(2017, 02, 20), new string[] { "Shampoo", "Apples", "AK-47" });
@@ -74,5 +93,45 @@ namespace SimpleInvoice
             picBackground.Image = Properties.Resources.steel;
         }
 
+
+
+        //Customer Functions
+
+        private void btnCustomerAdd_Click(object sender, EventArgs e)
+        {
+
+
+            //create empty customer object
+            Customer cust = new Customer();
+
+            //get all inputs and assign to new customer
+            cust.CustomerID = int.Parse(txtCustomerNumber.Text);
+            cust.FirstName = txtCustomerFirstName.Text;
+            cust.LastName = txtCustomerLastName.Text;
+            cust.ContactNumber = int.Parse(txtCustomerContact.Text);
+            cust.Address = txtCustomerAddress.Text;
+
+            //add this to array
+            addCustomer(cust);
+
+        }
+
+        private void btnCustomerUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //Invoice Functions
+
+        private void btnInvoiceAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInvoiceUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

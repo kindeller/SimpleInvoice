@@ -12,7 +12,7 @@ namespace SimpleInvoice
         public Customer() { }
 
         //contstructor
-        public Customer(int id, string fn, string ln, int cont, string[] add)
+        public Customer(int id, string fn, string ln, int cont, string add)
         {
             CustomerID = id;
             FirstName = fn;
@@ -26,7 +26,7 @@ namespace SimpleInvoice
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int ContactNumber { get; set; }
-        public string[] Address { get; set; }
+        public string Address { get; set; }
 
     }
 }
