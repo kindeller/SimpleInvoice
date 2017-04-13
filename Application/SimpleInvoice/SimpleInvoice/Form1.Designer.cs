@@ -28,13 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.steelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCustomerNumber = new System.Windows.Forms.TextBox();
             this.txtCustomerFirstName = new System.Windows.Forms.TextBox();
@@ -57,71 +50,35 @@
             this.txtInvoiceNumber = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.datePayment = new System.Windows.Forms.DateTimePicker();
-            this.listCustomerInvoices = new System.Windows.Forms.ListBox();
+            this.picBackground = new System.Windows.Forms.PictureBox();
             this.listInvoiceItems = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.picBackground = new System.Windows.Forms.PictureBox();
-            this.btnInvoiceItemsAdd = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.listItems = new System.Windows.Forms.ListBox();
+            this.applicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.steelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnList = new System.Windows.Forms.Button();
+            this.listLabel = new System.Windows.Forms.Label();
+            this.listboxItems = new System.Windows.Forms.ListBox();
+            this.applicationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.greenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.goldToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.steelToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.applicationToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.goldToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.greenToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.steelToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.applicationToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(803, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // applicationToolStripMenuItem
-            // 
-            this.applicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backgroundToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
-            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.applicationToolStripMenuItem.Text = "Application";
-            // 
-            // backgroundToolStripMenuItem
-            // 
-            this.backgroundToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.greenToolStripMenuItem,
-            this.goldToolStripMenuItem,
-            this.steelToolStripMenuItem});
-            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.backgroundToolStripMenuItem.Text = "Background";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // greenToolStripMenuItem
-            // 
-            this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-            this.greenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.greenToolStripMenuItem.Text = "Green";
-            this.greenToolStripMenuItem.Click += new System.EventHandler(this.greenToolStripMenuItem_Click);
-            // 
-            // goldToolStripMenuItem
-            // 
-            this.goldToolStripMenuItem.Name = "goldToolStripMenuItem";
-            this.goldToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.goldToolStripMenuItem.Text = "Gold";
-            this.goldToolStripMenuItem.Click += new System.EventHandler(this.goldToolStripMenuItem_Click);
-            // 
-            // steelToolStripMenuItem
-            // 
-            this.steelToolStripMenuItem.Name = "steelToolStripMenuItem";
-            this.steelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.steelToolStripMenuItem.Text = "Steel";
-            this.steelToolStripMenuItem.Click += new System.EventHandler(this.steelToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -309,40 +266,6 @@
             this.datePayment.Size = new System.Drawing.Size(143, 20);
             this.datePayment.TabIndex = 27;
             // 
-            // listCustomerInvoices
-            // 
-            this.listCustomerInvoices.FormattingEnabled = true;
-            this.listCustomerInvoices.Location = new System.Drawing.Point(286, 81);
-            this.listCustomerInvoices.Name = "listCustomerInvoices";
-            this.listCustomerInvoices.Size = new System.Drawing.Size(495, 160);
-            this.listCustomerInvoices.TabIndex = 28;
-            // 
-            // listInvoiceItems
-            // 
-            this.listInvoiceItems.FormattingEnabled = true;
-            this.listInvoiceItems.Location = new System.Drawing.Point(286, 312);
-            this.listInvoiceItems.Name = "listInvoiceItems";
-            this.listInvoiceItems.Size = new System.Drawing.Size(495, 134);
-            this.listInvoiceItems.TabIndex = 29;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(283, 296);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Invoice Items: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(283, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 13);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Invoices:";
-            // 
             // picBackground
             // 
             this.picBackground.Location = new System.Drawing.Point(0, 0);
@@ -352,25 +275,196 @@
             this.picBackground.TabIndex = 32;
             this.picBackground.TabStop = false;
             // 
-            // btnInvoiceItemsAdd
+            // listInvoiceItems
             // 
-            this.btnInvoiceItemsAdd.Location = new System.Drawing.Point(719, 452);
-            this.btnInvoiceItemsAdd.Name = "btnInvoiceItemsAdd";
-            this.btnInvoiceItemsAdd.Size = new System.Drawing.Size(62, 23);
-            this.btnInvoiceItemsAdd.TabIndex = 33;
-            this.btnInvoiceItemsAdd.Text = "Add";
-            this.btnInvoiceItemsAdd.UseVisualStyleBackColor = true;
+            this.listInvoiceItems.FormattingEnabled = true;
+            this.listInvoiceItems.Location = new System.Drawing.Point(286, 58);
+            this.listInvoiceItems.Name = "listInvoiceItems";
+            this.listInvoiceItems.Size = new System.Drawing.Size(495, 355);
+            this.listInvoiceItems.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(283, 33);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Invoice Items: ";
+            // 
+            // listItems
+            // 
+            this.listItems.FormattingEnabled = true;
+            this.listItems.Location = new System.Drawing.Point(286, 58);
+            this.listItems.Name = "listItems";
+            this.listItems.Size = new System.Drawing.Size(495, 355);
+            this.listItems.TabIndex = 29;
+            // 
+            // applicationToolStripMenuItem
+            // 
+            this.applicationToolStripMenuItem.Name = "applicationToolStripMenuItem";
+            this.applicationToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem.Text = "Application";
+            // 
+            // backgroundToolStripMenuItem
+            // 
+            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
+            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.backgroundToolStripMenuItem.Text = "Background";
+            // 
+            // greenToolStripMenuItem
+            // 
+            this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+            this.greenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.greenToolStripMenuItem.Text = "Green";
+            this.greenToolStripMenuItem.Click += new System.EventHandler(this.greenToolStripMenuItem_Click);
+            // 
+            // goldToolStripMenuItem
+            // 
+            this.goldToolStripMenuItem.Name = "goldToolStripMenuItem";
+            this.goldToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.goldToolStripMenuItem.Text = "Gold";
+            this.goldToolStripMenuItem.Click += new System.EventHandler(this.goldToolStripMenuItem_Click);
+            // 
+            // steelToolStripMenuItem
+            // 
+            this.steelToolStripMenuItem.Name = "steelToolStripMenuItem";
+            this.steelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.steelToolStripMenuItem.Text = "Steel";
+            this.steelToolStripMenuItem.Click += new System.EventHandler(this.steelToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // btnList
+            // 
+            this.btnList.Location = new System.Drawing.Point(719, 419);
+            this.btnList.Name = "btnList";
+            this.btnList.Size = new System.Drawing.Size(62, 23);
+            this.btnList.TabIndex = 33;
+            this.btnList.Text = "Add";
+            this.btnList.UseVisualStyleBackColor = true;
+            // 
+            // listLabel
+            // 
+            this.listLabel.AutoSize = true;
+            this.listLabel.Location = new System.Drawing.Point(283, 33);
+            this.listLabel.Name = "listLabel";
+            this.listLabel.Size = new System.Drawing.Size(76, 13);
+            this.listLabel.TabIndex = 30;
+            this.listLabel.Text = "Invoice Items: ";
+            // 
+            // listboxItems
+            // 
+            this.listboxItems.FormattingEnabled = true;
+            this.listboxItems.Location = new System.Drawing.Point(286, 58);
+            this.listboxItems.Name = "listboxItems";
+            this.listboxItems.Size = new System.Drawing.Size(495, 355);
+            this.listboxItems.TabIndex = 29;
+            // 
+            // applicationToolStripMenuItem1
+            // 
+            this.applicationToolStripMenuItem1.Name = "applicationToolStripMenuItem1";
+            this.applicationToolStripMenuItem1.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem1.Text = "Application";
+            // 
+            // backgroundToolStripMenuItem1
+            // 
+            this.backgroundToolStripMenuItem1.Name = "backgroundToolStripMenuItem1";
+            this.backgroundToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.backgroundToolStripMenuItem1.Text = "Background";
+            // 
+            // greenToolStripMenuItem1
+            // 
+            this.greenToolStripMenuItem1.Name = "greenToolStripMenuItem1";
+            this.greenToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.greenToolStripMenuItem1.Text = "Green";
+            // 
+            // goldToolStripMenuItem1
+            // 
+            this.goldToolStripMenuItem1.Name = "goldToolStripMenuItem1";
+            this.goldToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.goldToolStripMenuItem1.Text = "Gold";
+            // 
+            // steelToolStripMenuItem1
+            // 
+            this.steelToolStripMenuItem1.Name = "steelToolStripMenuItem1";
+            this.steelToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.steelToolStripMenuItem1.Text = "Steel";
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.applicationToolStripMenuItem2});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(803, 24);
+            this.menuStrip1.TabIndex = 34;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // applicationToolStripMenuItem2
+            // 
+            this.applicationToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundToolStripMenuItem2,
+            this.exitToolStripMenuItem2});
+            this.applicationToolStripMenuItem2.Name = "applicationToolStripMenuItem2";
+            this.applicationToolStripMenuItem2.Size = new System.Drawing.Size(80, 20);
+            this.applicationToolStripMenuItem2.Text = "Application";
+            // 
+            // backgroundToolStripMenuItem2
+            // 
+            this.backgroundToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.goldToolStripMenuItem2,
+            this.greenToolStripMenuItem2,
+            this.steelToolStripMenuItem2});
+            this.backgroundToolStripMenuItem2.Name = "backgroundToolStripMenuItem2";
+            this.backgroundToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.backgroundToolStripMenuItem2.Text = "Background";
+            // 
+            // exitToolStripMenuItem2
+            // 
+            this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
+            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem2.Text = "Exit";
+            // 
+            // goldToolStripMenuItem2
+            // 
+            this.goldToolStripMenuItem2.Name = "goldToolStripMenuItem2";
+            this.goldToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.goldToolStripMenuItem2.Text = "Gold";
+            this.goldToolStripMenuItem2.Click += new System.EventHandler(this.goldToolStripMenuItem2_Click);
+            // 
+            // greenToolStripMenuItem2
+            // 
+            this.greenToolStripMenuItem2.Name = "greenToolStripMenuItem2";
+            this.greenToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.greenToolStripMenuItem2.Text = "Green";
+            this.greenToolStripMenuItem2.Click += new System.EventHandler(this.greenToolStripMenuItem2_Click);
+            // 
+            // steelToolStripMenuItem2
+            // 
+            this.steelToolStripMenuItem2.Name = "steelToolStripMenuItem2";
+            this.steelToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.steelToolStripMenuItem2.Text = "Steel";
+            this.steelToolStripMenuItem2.Click += new System.EventHandler(this.steelToolStripMenuItem2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 501);
-            this.Controls.Add(this.btnInvoiceItemsAdd);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.listInvoiceItems);
-            this.Controls.Add(this.listCustomerInvoices);
+            this.Controls.Add(this.btnList);
+            this.Controls.Add(this.listLabel);
+            this.Controls.Add(this.listboxItems);
             this.Controls.Add(this.datePayment);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnInvoiceUpdate);
@@ -398,23 +492,15 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem goldToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem steelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCustomerNumber;
         private System.Windows.Forms.TextBox txtCustomerFirstName;
@@ -437,12 +523,32 @@
         private System.Windows.Forms.TextBox txtInvoiceNumber;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker datePayment;
-        private System.Windows.Forms.ListBox listCustomerInvoices;
+        private System.Windows.Forms.PictureBox picBackground;
         private System.Windows.Forms.ListBox listInvoiceItems;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox picBackground;
-        private System.Windows.Forms.Button btnInvoiceItemsAdd;
+        private System.Windows.Forms.ListBox listItems;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem goldToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem steelToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.ListBox listboxItems;
+        private System.Windows.Forms.Label listLabel;
+        private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem steelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goldToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applicationToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem goldToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem steelToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 
