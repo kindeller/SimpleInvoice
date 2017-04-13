@@ -30,7 +30,23 @@ namespace SimpleInvoice
 
         public void addItem(string item)
         {
+            GrowItemsArray();
 
+            Items[Items.Length - 1] = item;
+
+        }
+
+        private void GrowItemsArray()
+        {
+            //copy array
+            string[] tempItemsList = Items;
+            //resize
+            Items = new string[Items.Length + 1];
+            //readd values
+            for (int id = 0; id < tempItemsList.Length; id++)
+            {
+                Items[id] = tempItemsList[id];
+            }
         }
 
     }

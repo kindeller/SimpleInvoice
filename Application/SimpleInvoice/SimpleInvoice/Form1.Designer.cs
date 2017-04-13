@@ -60,9 +60,9 @@
             this.goldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.steelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnList = new System.Windows.Forms.Button();
-            this.listLabel = new System.Windows.Forms.Label();
-            this.listboxItems = new System.Windows.Forms.ListBox();
+            this.btnInvoiceAddItem = new System.Windows.Forms.Button();
+            this.lblInvoiceItems = new System.Windows.Forms.Label();
+            this.listboxInvoiceItems = new System.Windows.Forms.ListBox();
             this.applicationToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.greenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +76,15 @@
             this.goldToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.greenToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.steelToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCustomerSearchNumber = new System.Windows.Forms.Button();
+            this.btnCustomerSearchFirstName = new System.Windows.Forms.Button();
+            this.btnCustomerSearchLastName = new System.Windows.Forms.Button();
+            this.btnInvoiceSearchNumber = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.listCustomerInvoices = new System.Windows.Forms.ListBox();
+            this.btnCustomerInvoicesShow = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboItemsList = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -93,14 +102,14 @@
             // 
             this.txtCustomerNumber.Location = new System.Drawing.Point(108, 55);
             this.txtCustomerNumber.Name = "txtCustomerNumber";
-            this.txtCustomerNumber.Size = new System.Drawing.Size(143, 20);
+            this.txtCustomerNumber.Size = new System.Drawing.Size(121, 20);
             this.txtCustomerNumber.TabIndex = 2;
             // 
             // txtCustomerFirstName
             // 
             this.txtCustomerFirstName.Location = new System.Drawing.Point(108, 81);
             this.txtCustomerFirstName.Name = "txtCustomerFirstName";
-            this.txtCustomerFirstName.Size = new System.Drawing.Size(143, 20);
+            this.txtCustomerFirstName.Size = new System.Drawing.Size(121, 20);
             this.txtCustomerFirstName.TabIndex = 4;
             // 
             // label2
@@ -116,7 +125,7 @@
             // 
             this.txtCustomerLastName.Location = new System.Drawing.Point(108, 107);
             this.txtCustomerLastName.Name = "txtCustomerLastName";
-            this.txtCustomerLastName.Size = new System.Drawing.Size(143, 20);
+            this.txtCustomerLastName.Size = new System.Drawing.Size(121, 20);
             this.txtCustomerLastName.TabIndex = 6;
             // 
             // label3
@@ -132,7 +141,7 @@
             // 
             this.txtCustomerContact.Location = new System.Drawing.Point(108, 133);
             this.txtCustomerContact.Name = "txtCustomerContact";
-            this.txtCustomerContact.Size = new System.Drawing.Size(143, 20);
+            this.txtCustomerContact.Size = new System.Drawing.Size(121, 20);
             this.txtCustomerContact.TabIndex = 8;
             // 
             // label4
@@ -149,7 +158,7 @@
             this.txtCustomerAddress.Location = new System.Drawing.Point(108, 159);
             this.txtCustomerAddress.Multiline = true;
             this.txtCustomerAddress.Name = "txtCustomerAddress";
-            this.txtCustomerAddress.Size = new System.Drawing.Size(143, 78);
+            this.txtCustomerAddress.Size = new System.Drawing.Size(121, 78);
             this.txtCustomerAddress.TabIndex = 10;
             // 
             // label5
@@ -163,9 +172,9 @@
             // 
             // btnCustomerAdd
             // 
-            this.btnCustomerAdd.Location = new System.Drawing.Point(189, 243);
+            this.btnCustomerAdd.Location = new System.Drawing.Point(178, 243);
             this.btnCustomerAdd.Name = "btnCustomerAdd";
-            this.btnCustomerAdd.Size = new System.Drawing.Size(62, 23);
+            this.btnCustomerAdd.Size = new System.Drawing.Size(51, 23);
             this.btnCustomerAdd.TabIndex = 11;
             this.btnCustomerAdd.Text = "Add";
             this.btnCustomerAdd.UseVisualStyleBackColor = true;
@@ -175,7 +184,7 @@
             // 
             this.btnCustomerUpdate.Location = new System.Drawing.Point(108, 243);
             this.btnCustomerUpdate.Name = "btnCustomerUpdate";
-            this.btnCustomerUpdate.Size = new System.Drawing.Size(62, 23);
+            this.btnCustomerUpdate.Size = new System.Drawing.Size(50, 23);
             this.btnCustomerUpdate.TabIndex = 12;
             this.btnCustomerUpdate.Text = "Update";
             this.btnCustomerUpdate.UseVisualStyleBackColor = true;
@@ -205,7 +214,7 @@
             // 
             this.btnInvoiceUpdate.Location = new System.Drawing.Point(108, 392);
             this.btnInvoiceUpdate.Name = "btnInvoiceUpdate";
-            this.btnInvoiceUpdate.Size = new System.Drawing.Size(62, 23);
+            this.btnInvoiceUpdate.Size = new System.Drawing.Size(50, 23);
             this.btnInvoiceUpdate.TabIndex = 25;
             this.btnInvoiceUpdate.Text = "Update";
             this.btnInvoiceUpdate.UseVisualStyleBackColor = true;
@@ -213,9 +222,9 @@
             // 
             // btnInvoiceAdd
             // 
-            this.btnInvoiceAdd.Location = new System.Drawing.Point(189, 392);
+            this.btnInvoiceAdd.Location = new System.Drawing.Point(178, 392);
             this.btnInvoiceAdd.Name = "btnInvoiceAdd";
-            this.btnInvoiceAdd.Size = new System.Drawing.Size(62, 23);
+            this.btnInvoiceAdd.Size = new System.Drawing.Size(51, 23);
             this.btnInvoiceAdd.TabIndex = 24;
             this.btnInvoiceAdd.Text = "Add";
             this.btnInvoiceAdd.UseVisualStyleBackColor = true;
@@ -234,7 +243,7 @@
             // 
             this.txtInvoiceTotal.Location = new System.Drawing.Point(108, 339);
             this.txtInvoiceTotal.Name = "txtInvoiceTotal";
-            this.txtInvoiceTotal.Size = new System.Drawing.Size(143, 20);
+            this.txtInvoiceTotal.Size = new System.Drawing.Size(121, 20);
             this.txtInvoiceTotal.TabIndex = 17;
             // 
             // label11
@@ -250,7 +259,7 @@
             // 
             this.txtInvoiceNumber.Location = new System.Drawing.Point(108, 313);
             this.txtInvoiceNumber.Name = "txtInvoiceNumber";
-            this.txtInvoiceNumber.Size = new System.Drawing.Size(143, 20);
+            this.txtInvoiceNumber.Size = new System.Drawing.Size(121, 20);
             this.txtInvoiceNumber.TabIndex = 15;
             // 
             // label12
@@ -267,7 +276,7 @@
             this.datePayment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePayment.Location = new System.Drawing.Point(108, 366);
             this.datePayment.Name = "datePayment";
-            this.datePayment.Size = new System.Drawing.Size(143, 20);
+            this.datePayment.Size = new System.Drawing.Size(121, 20);
             this.datePayment.TabIndex = 27;
             // 
             // picBackground
@@ -343,31 +352,31 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // btnList
+            // btnInvoiceAddItem
             // 
-            this.btnList.Location = new System.Drawing.Point(719, 419);
-            this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(62, 23);
-            this.btnList.TabIndex = 33;
-            this.btnList.Text = "Add";
-            this.btnList.UseVisualStyleBackColor = true;
+            this.btnInvoiceAddItem.Location = new System.Drawing.Point(719, 456);
+            this.btnInvoiceAddItem.Name = "btnInvoiceAddItem";
+            this.btnInvoiceAddItem.Size = new System.Drawing.Size(62, 23);
+            this.btnInvoiceAddItem.TabIndex = 33;
+            this.btnInvoiceAddItem.Text = "Add Item";
+            this.btnInvoiceAddItem.UseVisualStyleBackColor = true;
             // 
-            // listLabel
+            // lblInvoiceItems
             // 
-            this.listLabel.AutoSize = true;
-            this.listLabel.Location = new System.Drawing.Point(283, 33);
-            this.listLabel.Name = "listLabel";
-            this.listLabel.Size = new System.Drawing.Size(76, 13);
-            this.listLabel.TabIndex = 30;
-            this.listLabel.Text = "Invoice Items: ";
+            this.lblInvoiceItems.AutoSize = true;
+            this.lblInvoiceItems.Location = new System.Drawing.Point(283, 263);
+            this.lblInvoiceItems.Name = "lblInvoiceItems";
+            this.lblInvoiceItems.Size = new System.Drawing.Size(76, 13);
+            this.lblInvoiceItems.TabIndex = 30;
+            this.lblInvoiceItems.Text = "Invoice Items: ";
             // 
-            // listboxItems
+            // listboxInvoiceItems
             // 
-            this.listboxItems.FormattingEnabled = true;
-            this.listboxItems.Location = new System.Drawing.Point(286, 58);
-            this.listboxItems.Name = "listboxItems";
-            this.listboxItems.Size = new System.Drawing.Size(495, 355);
-            this.listboxItems.TabIndex = 29;
+            this.listboxInvoiceItems.FormattingEnabled = true;
+            this.listboxInvoiceItems.Location = new System.Drawing.Point(286, 279);
+            this.listboxInvoiceItems.Name = "listboxInvoiceItems";
+            this.listboxInvoiceItems.Size = new System.Drawing.Size(495, 134);
+            this.listboxInvoiceItems.TabIndex = 29;
             // 
             // applicationToolStripMenuItem1
             // 
@@ -461,14 +470,112 @@
             this.steelToolStripMenuItem2.Text = "Steel";
             this.steelToolStripMenuItem2.Click += new System.EventHandler(this.steelToolStripMenuItem2_Click);
             // 
+            // btnCustomerSearchNumber
+            // 
+            this.btnCustomerSearchNumber.Location = new System.Drawing.Point(236, 55);
+            this.btnCustomerSearchNumber.Name = "btnCustomerSearchNumber";
+            this.btnCustomerSearchNumber.Size = new System.Drawing.Size(22, 20);
+            this.btnCustomerSearchNumber.TabIndex = 35;
+            this.btnCustomerSearchNumber.Text = "Q";
+            this.btnCustomerSearchNumber.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomerSearchFirstName
+            // 
+            this.btnCustomerSearchFirstName.Location = new System.Drawing.Point(236, 81);
+            this.btnCustomerSearchFirstName.Name = "btnCustomerSearchFirstName";
+            this.btnCustomerSearchFirstName.Size = new System.Drawing.Size(22, 20);
+            this.btnCustomerSearchFirstName.TabIndex = 36;
+            this.btnCustomerSearchFirstName.Text = "Q";
+            this.btnCustomerSearchFirstName.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomerSearchLastName
+            // 
+            this.btnCustomerSearchLastName.Location = new System.Drawing.Point(236, 107);
+            this.btnCustomerSearchLastName.Name = "btnCustomerSearchLastName";
+            this.btnCustomerSearchLastName.Size = new System.Drawing.Size(22, 20);
+            this.btnCustomerSearchLastName.TabIndex = 37;
+            this.btnCustomerSearchLastName.Text = "Q";
+            this.btnCustomerSearchLastName.UseVisualStyleBackColor = true;
+            // 
+            // btnInvoiceSearchNumber
+            // 
+            this.btnInvoiceSearchNumber.Location = new System.Drawing.Point(236, 312);
+            this.btnInvoiceSearchNumber.Name = "btnInvoiceSearchNumber";
+            this.btnInvoiceSearchNumber.Size = new System.Drawing.Size(22, 20);
+            this.btnInvoiceSearchNumber.TabIndex = 38;
+            this.btnInvoiceSearchNumber.Text = "Q";
+            this.btnInvoiceSearchNumber.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(283, 42);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "Invoices: ";
+            // 
+            // listCustomerInvoices
+            // 
+            this.listCustomerInvoices.FormattingEnabled = true;
+            this.listCustomerInvoices.Location = new System.Drawing.Point(286, 58);
+            this.listCustomerInvoices.Name = "listCustomerInvoices";
+            this.listCustomerInvoices.Size = new System.Drawing.Size(495, 160);
+            this.listCustomerInvoices.TabIndex = 39;
+            // 
+            // btnCustomerInvoicesShow
+            // 
+            this.btnCustomerInvoicesShow.Location = new System.Drawing.Point(719, 224);
+            this.btnCustomerInvoicesShow.Name = "btnCustomerInvoicesShow";
+            this.btnCustomerInvoicesShow.Size = new System.Drawing.Size(62, 23);
+            this.btnCustomerInvoicesShow.TabIndex = 41;
+            this.btnCustomerInvoicesShow.Text = "Show";
+            this.btnCustomerInvoicesShow.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(283, 440);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 13);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "New Invoice Item: ";
+            // 
+            // comboItemsList
+            // 
+            this.comboItemsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboItemsList.FormattingEnabled = true;
+            this.comboItemsList.Items.AddRange(new object[] {
+            "Apples",
+            "Cilit Bang",
+            "Conditioner",
+            "Cryptonite",
+            "Fruit Juice",
+            "Oranges",
+            "Orichalcum Ore",
+            "Shampoo"});
+            this.comboItemsList.Location = new System.Drawing.Point(286, 456);
+            this.comboItemsList.Name = "comboItemsList";
+            this.comboItemsList.Size = new System.Drawing.Size(416, 21);
+            this.comboItemsList.TabIndex = 44;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 501);
-            this.Controls.Add(this.btnList);
-            this.Controls.Add(this.listLabel);
-            this.Controls.Add(this.listboxItems);
+            this.Controls.Add(this.comboItemsList);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.btnCustomerInvoicesShow);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.listCustomerInvoices);
+            this.Controls.Add(this.btnInvoiceSearchNumber);
+            this.Controls.Add(this.btnCustomerSearchLastName);
+            this.Controls.Add(this.btnCustomerSearchFirstName);
+            this.Controls.Add(this.btnCustomerSearchNumber);
+            this.Controls.Add(this.btnInvoiceAddItem);
+            this.Controls.Add(this.lblInvoiceItems);
+            this.Controls.Add(this.listboxInvoiceItems);
             this.Controls.Add(this.datePayment);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnInvoiceUpdate);
@@ -537,9 +644,9 @@
         private System.Windows.Forms.ToolStripMenuItem goldToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem steelToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
-        private System.Windows.Forms.ListBox listboxItems;
-        private System.Windows.Forms.Label listLabel;
-        private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.ListBox listboxInvoiceItems;
+        private System.Windows.Forms.Label lblInvoiceItems;
+        private System.Windows.Forms.Button btnInvoiceAddItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem steelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goldToolStripMenuItem;
@@ -553,6 +660,15 @@
         private System.Windows.Forms.ToolStripMenuItem steelToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem2;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button btnCustomerSearchNumber;
+        private System.Windows.Forms.Button btnCustomerSearchFirstName;
+        private System.Windows.Forms.Button btnCustomerSearchLastName;
+        private System.Windows.Forms.Button btnInvoiceSearchNumber;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnCustomerInvoicesShow;
+        private System.Windows.Forms.ListBox listCustomerInvoices;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboItemsList;
     }
 }
 

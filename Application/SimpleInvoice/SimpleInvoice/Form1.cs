@@ -14,6 +14,8 @@ namespace SimpleInvoice
     {
         Customer[] CustomerList = new Customer[1];
         Invoice[] InvoiceList = new Invoice[1];
+        Customer currentCustomer;
+        Invoice currentInvoice;
 
         public Form1()
         {
@@ -41,8 +43,6 @@ namespace SimpleInvoice
                 CustomerList[id] = tempCustomerList[id];
             }
         }
-
-
 
         //iniitalise some data on load
 
@@ -105,7 +105,7 @@ namespace SimpleInvoice
             Customer cust = new Customer();
 
             //get all inputs and assign to new customer
-            cust.CustomerID = int.Parse(txtCustomerNumber.Text);
+            cust.CustomerID = Customer.IDCounter;
             cust.FirstName = txtCustomerFirstName.Text;
             cust.LastName = txtCustomerLastName.Text;
             cust.ContactNumber = int.Parse(txtCustomerContact.Text);
@@ -126,7 +126,12 @@ namespace SimpleInvoice
 
         private void btnInvoiceAdd_Click(object sender, EventArgs e)
         {
+            //create empty invoice object
+            Invoice inv = new Invoice();
 
+            //assign values
+
+            //add to list
         }
 
         private void btnInvoiceUpdate_Click(object sender, EventArgs e)

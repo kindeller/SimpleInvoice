@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimpleInvoice
 {
+
     class Customer
     {
 
-        public Customer() { }
+        public static int IDCounter = 0;
+
+        public Customer() { IDCounter++; }
 
         //contstructor
         public Customer(int id, string fn, string ln, int cont, string add)
@@ -19,6 +22,7 @@ namespace SimpleInvoice
             LastName = ln;
             ContactNumber = cont;
             Address = add;
+            IDCounter++;
         }
 
         //properties
