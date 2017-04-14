@@ -50,7 +50,6 @@
             this.txtInvoiceNumber = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.datePayment = new System.Windows.Forms.DateTimePicker();
-            this.picBackground = new System.Windows.Forms.PictureBox();
             this.listInvoiceItems = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.listItems = new System.Windows.Forms.ListBox();
@@ -85,8 +84,9 @@
             this.btnCustomerInvoicesShow = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.comboItemsList = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
+            this.picBackground = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -279,15 +279,6 @@
             this.datePayment.Size = new System.Drawing.Size(121, 20);
             this.datePayment.TabIndex = 27;
             // 
-            // picBackground
-            // 
-            this.picBackground.Location = new System.Drawing.Point(0, 0);
-            this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(803, 503);
-            this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBackground.TabIndex = 32;
-            this.picBackground.TabStop = false;
-            // 
             // listInvoiceItems
             // 
             this.listInvoiceItems.FormattingEnabled = true;
@@ -478,6 +469,7 @@
             this.btnCustomerSearchNumber.TabIndex = 35;
             this.btnCustomerSearchNumber.Text = "Q";
             this.btnCustomerSearchNumber.UseVisualStyleBackColor = true;
+            this.btnCustomerSearchNumber.Click += new System.EventHandler(this.btnCustomerSearchNumber_Click);
             // 
             // btnCustomerSearchFirstName
             // 
@@ -533,6 +525,7 @@
             this.btnCustomerInvoicesShow.TabIndex = 41;
             this.btnCustomerInvoicesShow.Text = "Show";
             this.btnCustomerInvoicesShow.UseVisualStyleBackColor = true;
+            this.btnCustomerInvoicesShow.Click += new System.EventHandler(this.btnCustomerInvoicesShow_Click);
             // 
             // label13
             // 
@@ -560,6 +553,15 @@
             this.comboItemsList.Name = "comboItemsList";
             this.comboItemsList.Size = new System.Drawing.Size(416, 21);
             this.comboItemsList.TabIndex = 44;
+            // 
+            // picBackground
+            // 
+            this.picBackground.Location = new System.Drawing.Point(0, 0);
+            this.picBackground.Name = "picBackground";
+            this.picBackground.Size = new System.Drawing.Size(803, 503);
+            this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBackground.TabIndex = 32;
+            this.picBackground.TabStop = false;
             // 
             // Form1
             // 
@@ -605,9 +607,9 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -60,6 +60,38 @@ namespace SimpleInvoice
             return foundCustomers;
         }
 
+        private List<Customer> searchCustomerID(int id)
+        {
+            List<Customer> foundCustomers = new List<Customer>();
+
+            for (int index = 0; index < CustomerList.Length; index++)
+            {
+                if (CustomerList[index].CustomerID == id)
+                {
+                    foundCustomers.Add(CustomerList[index]);
+                }
+            }
+            return foundCustomers;
+        }
+
+        private List<Invoice> searchCustomerInvoice(int customerID)
+        {
+            List<Invoice> invoices = new List<Invoice>();
+
+            //loop through invoices
+            foreach (Invoice inv in InvoiceList)
+            {
+                //find those that match customer id
+                if (inv.CustomerID == customerID)
+                {
+                    //add to list
+                    invoices.Add(inv);
+                }
+            }
+            //return list
+            return invoices;
+        }
+
         public void setCurrentCustomer(Customer cust)
         {
             currentCustomer = cust;
@@ -73,11 +105,18 @@ namespace SimpleInvoice
             txtCustomerLastName.Text = currentCustomer.LastName;
             txtCustomerContact.Text = currentCustomer.ContactNumber.ToString();
             txtCustomerAddress.Text = currentCustomer.Address;
+            
         }
 
         private void updateInvoice()
         {
-
+            txtInvoiceNumber.Text = currentInvoice.InvoiceID.ToString();
+            txtInvoiceTotal.Text = currentInvoice.TotalCost.ToString();
+            datePayment.Value = currentInvoice.PaymentDate;
+            foreach (string item in currentInvoice.Items)
+            {
+                listInvoiceItems.Items.Add(item);
+            }
         }
 
         private void growCustomerArray()
@@ -102,7 +141,7 @@ namespace SimpleInvoice
             Customer cust = new Customer(1, "frank", "Underwood", 0800909090, "1 something way, Funkytown, awesome land");
             CustomerList[0] = cust;
             growCustomerArray();
-            cust = new Customer(1, "frank", "sinatra", 0800909090, "1 something way, Funkytown, awesome land");
+            cust = new Customer(2, "frank", "sinatra", 0800909090, "1 something way, Funkytown, awesome land");
             CustomerList[1] = cust;
 
             Invoice inv = new Invoice(1, 1, 20.99, new DateTime(2017, 02, 20), new string[] { "Shampoo", "Apples", "AK-47" });
@@ -203,8 +242,16 @@ namespace SimpleInvoice
 
             if(foundCustomers.Count <= 1)
             {
-                currentCustomer = foundCustomers[0];
-                updateCustomer();
+                if (foundCustomers.Count < 1)
+                {
+                    MessageBox.Show("No Customers with that first name found!");
+                }
+                else
+                {
+                    currentCustomer = foundCustomers[0];
+                    updateCustomer();
+                }
+
             }
             else
             {
@@ -218,9 +265,57 @@ namespace SimpleInvoice
 
         private void btnCustomerSearchLastName_Click(object sender, EventArgs e)
         {
-            searchCustomerLastName(txtCustomerLastName.Text);
+            List<Customer> foundCustomers = new List<Customer>();
+            foundCustomers = searchCustomerLastName(txtCustomerLastName.Text);
+
+            if (foundCustomers.Count <= 1)
+            {
+                if (foundCustomers.Count < 1)
+                {
+                    MessageBox.Show("No Customers with that last name found!");
+                }
+                else
+                {
+                    currentCustomer = foundCustomers[0];
+                    updateCustomer();
+                }
+            }
+            else
+            {
+                Selection selectCustomer = new Selection();
+                selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
+                selectCustomer.ShowDialog();
+            }
+            
         }
 
-        
+        private void btnCustomerInvoicesShow_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCustomerSearchNumber_Click(object sender, EventArgs e)
+        {
+            List<Customer> foundCustomers = new List<Customer>();
+            foundCustomers = searchCustomerID(int.Parse(txtCustomerNumber.Text));
+
+            if (foundCustomers.Count <= 1)
+            {
+                if (foundCustomers.Count < 1)
+                {
+                    MessageBox.Show("No Customers matching that ID Found!");
+                }
+                else
+                {
+                    currentCustomer = foundCustomers[0];
+                    updateCustomer();
+                }
+            }
+            else
+            {
+                Selection selectCustomer = new Selection();
+                selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
+                selectCustomer.ShowDialog();
+            }
+        }
     }
 }
