@@ -84,9 +84,9 @@
             this.btnCustomerInvoicesShow = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.comboInvoiceItems = new System.Windows.Forms.ComboBox();
-            this.picBackground = new System.Windows.Forms.PictureBox();
             this.btnRemoveInvoiceItem = new System.Windows.Forms.Button();
             this.btnRemoveAllInvoiceItems = new System.Windows.Forms.Button();
+            this.picBackground = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.SuspendLayout();
@@ -434,7 +434,7 @@
             this.greenToolStripMenuItem2,
             this.steelToolStripMenuItem2});
             this.backgroundToolStripMenuItem2.Name = "backgroundToolStripMenuItem2";
-            this.backgroundToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
+            this.backgroundToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.backgroundToolStripMenuItem2.Text = "Background";
             // 
             // goldToolStripMenuItem2
@@ -559,15 +559,6 @@
             this.comboInvoiceItems.Size = new System.Drawing.Size(403, 21);
             this.comboInvoiceItems.TabIndex = 44;
             // 
-            // picBackground
-            // 
-            this.picBackground.Location = new System.Drawing.Point(0, 0);
-            this.picBackground.Name = "picBackground";
-            this.picBackground.Size = new System.Drawing.Size(803, 503);
-            this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBackground.TabIndex = 32;
-            this.picBackground.TabStop = false;
-            // 
             // btnRemoveInvoiceItem
             // 
             this.btnRemoveInvoiceItem.Location = new System.Drawing.Point(603, 419);
@@ -587,6 +578,15 @@
             this.btnRemoveAllInvoiceItems.Text = "Remove All";
             this.btnRemoveAllInvoiceItems.UseVisualStyleBackColor = true;
             this.btnRemoveAllInvoiceItems.Click += new System.EventHandler(this.btnRemoveAllInvoiceItems_Click);
+            // 
+            // picBackground
+            // 
+            this.picBackground.Location = new System.Drawing.Point(0, 0);
+            this.picBackground.Name = "picBackground";
+            this.picBackground.Size = new System.Drawing.Size(803, 503);
+            this.picBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBackground.TabIndex = 32;
+            this.picBackground.TabStop = false;
             // 
             // Form1
             // 

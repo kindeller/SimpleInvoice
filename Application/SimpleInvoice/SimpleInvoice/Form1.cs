@@ -27,6 +27,7 @@ namespace SimpleInvoice
             initData();
             Login loginWindow = new Login();
             loginWindow.ShowDialog();
+
         }
 
         private void addCustomer(Customer customer)
@@ -299,10 +300,18 @@ namespace SimpleInvoice
 
         private void btnCustomerUpdate_Click(object sender, EventArgs e)
         {
-            currentCustomer.FirstName = txtCustomerFirstName.Text;
-            currentCustomer.LastName = txtCustomerLastName.Text;
-            currentCustomer.Address = txtCustomerAddress.Text;
-            currentCustomer.ContactNumber = int.Parse(txtCustomerContact.Text);
+            if(currentCustomer != null)
+            {
+                currentCustomer.FirstName = txtCustomerFirstName.Text;
+                currentCustomer.LastName = txtCustomerLastName.Text;
+                currentCustomer.Address = txtCustomerAddress.Text;
+                currentCustomer.ContactNumber = int.Parse(txtCustomerContact.Text);
+            }
+            else
+            {
+                MessageBox.Show("No Customer To update!");
+            }
+
         }
 
 
@@ -344,16 +353,24 @@ namespace SimpleInvoice
 
         private void btnInvoiceUpdate_Click(object sender, EventArgs e)
         {
-            currentInvoice.PaymentDate = datePayment.Value;
-            currentInvoice.TotalCost = double.Parse(txtInvoiceTotal.Text);
-
-            List<string> invoiceItems = new List<string>();
-
-            for (int i = 0; i < listboxInvoiceItems.Items.Count; i++)
+            if(currentInvoice != null)
             {
-                invoiceItems.Add(listboxInvoiceItems.Items[i].ToString());
+                currentInvoice.PaymentDate = datePayment.Value;
+                currentInvoice.TotalCost = double.Parse(txtInvoiceTotal.Text);
+
+                List<string> invoiceItems = new List<string>();
+
+                for (int i = 0; i < listboxInvoiceItems.Items.Count; i++)
+                {
+                    invoiceItems.Add(listboxInvoiceItems.Items[i].ToString());
+                }
+                currentInvoice.Items = invoiceItems;
             }
-            currentInvoice.Items = invoiceItems;
+            else
+            {
+                MessageBox.Show("No Invoice to update!");
+            }
+
         }
 
         private void btnCustomerSearchFirstName_Click(object sender, EventArgs e)
@@ -434,6 +451,10 @@ namespace SimpleInvoice
                 currentInvoice = searchCustomerInvoiceID(int.Parse(itemStings[0]));
                 updateInvoice();
             }
+            else
+            {
+                MessageBox.Show("No Invoices Selected!");
+            }
 
 
 
@@ -443,18 +464,27 @@ namespace SimpleInvoice
         {
             if(txtCustomerNumber.Text != "")
             {
-                Customer foundCustomer = new Customer();
-                foundCustomer = searchCustomerID(int.Parse(txtCustomerNumber.Text));
-
-                if (foundCustomer.FirstName == null)
+                int i = 0;
+                if (int.TryParse(txtCustomerNumber.Text,out i))
                 {
-                    MessageBox.Show("No Customers matching that ID Found!");
+                    Customer foundCustomer = new Customer();
+                    foundCustomer = searchCustomerID(int.Parse(txtCustomerNumber.Text));
+
+                    if (foundCustomer.FirstName == null)
+                    {
+                        MessageBox.Show("No Customers matching that ID Found!");
+                    }
+                    else
+                    {
+                        currentCustomer = foundCustomer;
+                        updateCustomer();
+                    }
                 }
                 else
                 {
-                    currentCustomer = foundCustomer;
-                    updateCustomer();
+                    MessageBox.Show("Invalid Characters!");
                 }
+
             }
             else
             {
@@ -476,8 +506,15 @@ namespace SimpleInvoice
         {
             if(currentCustomer != null || currentInvoice != null)
             {
-
-                listboxInvoiceItems.Items.Add(comboInvoiceItems.SelectedItem);
+                if(comboInvoiceItems.SelectedItem != null)
+                {
+                    listboxInvoiceItems.Items.Add(comboInvoiceItems.SelectedItem);
+                }
+                else
+                {
+                    MessageBox.Show("No Item Selected!");
+                }
+                
             }
             else
             {
