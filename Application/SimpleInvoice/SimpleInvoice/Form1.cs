@@ -25,13 +25,62 @@ namespace SimpleInvoice
 
         private void addCustomer(Customer customer)
         {
-            GrowCustomerArray();
+            growCustomerArray();
             //add customer in last slot;
             CustomerList[CustomerList.Length - 1] = customer;
 
         }
 
-        private void GrowCustomerArray()
+
+        private List<Customer> searchCustomerFirstName(string name)
+        {
+            List<Customer> foundCustomers = new List<Customer>();
+
+            for (int index = 0; index < CustomerList.Length; index++)
+            {
+                if (CustomerList[index].FirstName.Contains(name))
+                {
+                    foundCustomers.Add(CustomerList[index]);
+                }
+            }
+            return foundCustomers;
+        }
+
+        private List<Customer> searchCustomerLastName(string name)
+        {
+            List<Customer> foundCustomers = new List<Customer>();
+
+            for (int index = 0; index < CustomerList.Length; index++)
+            {
+                if (CustomerList[index].LastName.Contains(name))
+                {
+                    foundCustomers.Add(CustomerList[index]);
+                }
+            }
+            return foundCustomers;
+        }
+
+        public void setCurrentCustomer(Customer cust)
+        {
+            currentCustomer = cust;
+            updateCustomer();
+        }
+
+        private void updateCustomer()
+        {
+            txtCustomerNumber.Text = currentCustomer.CustomerID.ToString();
+            txtCustomerFirstName.Text = currentCustomer.FirstName;
+            txtCustomerLastName.Text = currentCustomer.LastName;
+            txtCustomerContact.Text = currentCustomer.ContactNumber.ToString();
+            txtCustomerAddress.Text = currentCustomer.Address;
+        }
+
+        private void updateInvoice()
+        {
+
+        }
+
+        private void growCustomerArray()
         {
             //copy array
             Customer[] tempCustomerList = CustomerList;
@@ -42,6 +91,7 @@ namespace SimpleInvoice
             {
                 CustomerList[id] = tempCustomerList[id];
             }
+            
         }
 
         //iniitalise some data on load
@@ -51,6 +101,9 @@ namespace SimpleInvoice
 
             Customer cust = new Customer(1, "frank", "Underwood", 0800909090, "1 something way, Funkytown, awesome land");
             CustomerList[0] = cust;
+            growCustomerArray();
+            cust = new Customer(1, "frank", "sinatra", 0800909090, "1 something way, Funkytown, awesome land");
+            CustomerList[1] = cust;
 
             Invoice inv = new Invoice(1, 1, 20.99, new DateTime(2017, 02, 20), new string[] { "Shampoo", "Apples", "AK-47" });
             InvoiceList[0] = inv;
@@ -114,6 +167,10 @@ namespace SimpleInvoice
             //add this to array
             addCustomer(cust);
 
+            //update current customer
+            currentCustomer = cust;
+            updateCustomer();
+
         }
 
         private void btnCustomerUpdate_Click(object sender, EventArgs e)
@@ -138,5 +195,32 @@ namespace SimpleInvoice
         {
 
         }
+
+        private void btnCustomerSearchFirstName_Click(object sender, EventArgs e)
+        {
+            List<Customer> foundCustomers = new List<Customer>();
+            foundCustomers = searchCustomerFirstName(txtCustomerFirstName.Text);
+
+            if(foundCustomers.Count <= 1)
+            {
+                currentCustomer = foundCustomers[0];
+                updateCustomer();
+            }
+            else
+            {
+                Selection selectCustomer = new Selection();
+                selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
+                selectCustomer.ShowDialog();
+            }
+            
+
+        }
+
+        private void btnCustomerSearchLastName_Click(object sender, EventArgs e)
+        {
+            searchCustomerLastName(txtCustomerLastName.Text);
+        }
+
+        
     }
 }

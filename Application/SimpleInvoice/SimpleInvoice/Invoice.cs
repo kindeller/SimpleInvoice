@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleInvoice
 {
-    class Invoice
+    public class Invoice
     {
 
         public Invoice() { }

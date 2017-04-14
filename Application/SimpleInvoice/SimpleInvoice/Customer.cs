@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SimpleInvoice
 {
 
-    class Customer
+    public class Customer
     {
 
         public static int IDCounter = 0;

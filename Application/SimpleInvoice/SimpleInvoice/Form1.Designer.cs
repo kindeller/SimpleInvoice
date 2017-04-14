@@ -72,10 +72,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicationToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.goldToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.greenToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.steelToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCustomerSearchNumber = new System.Windows.Forms.Button();
             this.btnCustomerSearchFirstName = new System.Windows.Forms.Button();
             this.btnCustomerSearchLastName = new System.Windows.Forms.Button();
@@ -440,35 +440,35 @@
             this.greenToolStripMenuItem2,
             this.steelToolStripMenuItem2});
             this.backgroundToolStripMenuItem2.Name = "backgroundToolStripMenuItem2";
-            this.backgroundToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.backgroundToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
             this.backgroundToolStripMenuItem2.Text = "Background";
-            // 
-            // exitToolStripMenuItem2
-            // 
-            this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
-            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem2.Text = "Exit";
             // 
             // goldToolStripMenuItem2
             // 
             this.goldToolStripMenuItem2.Name = "goldToolStripMenuItem2";
-            this.goldToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.goldToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.goldToolStripMenuItem2.Text = "Gold";
             this.goldToolStripMenuItem2.Click += new System.EventHandler(this.goldToolStripMenuItem2_Click);
             // 
             // greenToolStripMenuItem2
             // 
             this.greenToolStripMenuItem2.Name = "greenToolStripMenuItem2";
-            this.greenToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.greenToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.greenToolStripMenuItem2.Text = "Green";
             this.greenToolStripMenuItem2.Click += new System.EventHandler(this.greenToolStripMenuItem2_Click);
             // 
             // steelToolStripMenuItem2
             // 
             this.steelToolStripMenuItem2.Name = "steelToolStripMenuItem2";
-            this.steelToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.steelToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.steelToolStripMenuItem2.Text = "Steel";
             this.steelToolStripMenuItem2.Click += new System.EventHandler(this.steelToolStripMenuItem2_Click);
+            // 
+            // exitToolStripMenuItem2
+            // 
+            this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
+            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
+            this.exitToolStripMenuItem2.Text = "Exit";
             // 
             // btnCustomerSearchNumber
             // 
@@ -487,6 +487,7 @@
             this.btnCustomerSearchFirstName.TabIndex = 36;
             this.btnCustomerSearchFirstName.Text = "Q";
             this.btnCustomerSearchFirstName.UseVisualStyleBackColor = true;
+            this.btnCustomerSearchFirstName.Click += new System.EventHandler(this.btnCustomerSearchFirstName_Click);
             // 
             // btnCustomerSearchLastName
             // 
@@ -496,6 +497,7 @@
             this.btnCustomerSearchLastName.TabIndex = 37;
             this.btnCustomerSearchLastName.Text = "Q";
             this.btnCustomerSearchLastName.UseVisualStyleBackColor = true;
+            this.btnCustomerSearchLastName.Click += new System.EventHandler(this.btnCustomerSearchLastName_Click);
             // 
             // btnInvoiceSearchNumber
             // 

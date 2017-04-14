@@ -7,3 +7,4 @@ G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleIn
 G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.csproj.GenerateResource.Cache
 G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.exe
 G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.pdb
+G:\TAFE\SimpleInvoice\Application\SimpleInvoice\SimpleInvoice\obj\Debug\SimpleInvoice.Selection.resources
