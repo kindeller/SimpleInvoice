@@ -1,6 +1,6 @@
 ﻿namespace SimpleInvoice
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.label1 = new System.Windows.Forms.Label();
             this.txtCustomerNumber = new System.Windows.Forms.TextBox();
             this.txtCustomerFirstName = new System.Windows.Forms.TextBox();
@@ -87,6 +88,7 @@
             this.btnRemoveInvoiceItem = new System.Windows.Forms.Button();
             this.btnRemoveAllInvoiceItems = new System.Windows.Forms.Button();
             this.picBackground = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.SuspendLayout();
@@ -160,7 +162,7 @@
             this.txtCustomerAddress.Location = new System.Drawing.Point(108, 159);
             this.txtCustomerAddress.Multiline = true;
             this.txtCustomerAddress.Name = "txtCustomerAddress";
-            this.txtCustomerAddress.Size = new System.Drawing.Size(121, 78);
+            this.txtCustomerAddress.Size = new System.Drawing.Size(121, 59);
             this.txtCustomerAddress.TabIndex = 10;
             // 
             // label5
@@ -174,7 +176,7 @@
             // 
             // btnCustomerAdd
             // 
-            this.btnCustomerAdd.Location = new System.Drawing.Point(178, 243);
+            this.btnCustomerAdd.Location = new System.Drawing.Point(178, 224);
             this.btnCustomerAdd.Name = "btnCustomerAdd";
             this.btnCustomerAdd.Size = new System.Drawing.Size(51, 23);
             this.btnCustomerAdd.TabIndex = 11;
@@ -184,7 +186,7 @@
             // 
             // btnCustomerUpdate
             // 
-            this.btnCustomerUpdate.Location = new System.Drawing.Point(108, 243);
+            this.btnCustomerUpdate.Location = new System.Drawing.Point(108, 224);
             this.btnCustomerUpdate.Name = "btnCustomerUpdate";
             this.btnCustomerUpdate.Size = new System.Drawing.Size(50, 23);
             this.btnCustomerUpdate.TabIndex = 12;
@@ -206,7 +208,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 286);
+            this.label7.Location = new System.Drawing.Point(11, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 18);
             this.label7.TabIndex = 26;
@@ -214,7 +216,7 @@
             // 
             // btnInvoiceUpdate
             // 
-            this.btnInvoiceUpdate.Location = new System.Drawing.Point(108, 392);
+            this.btnInvoiceUpdate.Location = new System.Drawing.Point(108, 373);
             this.btnInvoiceUpdate.Name = "btnInvoiceUpdate";
             this.btnInvoiceUpdate.Size = new System.Drawing.Size(50, 23);
             this.btnInvoiceUpdate.TabIndex = 25;
@@ -224,7 +226,7 @@
             // 
             // btnInvoiceAdd
             // 
-            this.btnInvoiceAdd.Location = new System.Drawing.Point(178, 392);
+            this.btnInvoiceAdd.Location = new System.Drawing.Point(178, 373);
             this.btnInvoiceAdd.Name = "btnInvoiceAdd";
             this.btnInvoiceAdd.Size = new System.Drawing.Size(51, 23);
             this.btnInvoiceAdd.TabIndex = 24;
@@ -235,7 +237,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 372);
+            this.label10.Location = new System.Drawing.Point(25, 353);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 13);
             this.label10.TabIndex = 18;
@@ -243,7 +245,7 @@
             // 
             // txtInvoiceTotal
             // 
-            this.txtInvoiceTotal.Location = new System.Drawing.Point(108, 339);
+            this.txtInvoiceTotal.Location = new System.Drawing.Point(108, 320);
             this.txtInvoiceTotal.Name = "txtInvoiceTotal";
             this.txtInvoiceTotal.Size = new System.Drawing.Size(121, 20);
             this.txtInvoiceTotal.TabIndex = 17;
@@ -251,7 +253,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(44, 342);
+            this.label11.Location = new System.Drawing.Point(44, 323);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 13);
             this.label11.TabIndex = 16;
@@ -259,7 +261,7 @@
             // 
             // txtInvoiceNumber
             // 
-            this.txtInvoiceNumber.Location = new System.Drawing.Point(108, 313);
+            this.txtInvoiceNumber.Location = new System.Drawing.Point(108, 294);
             this.txtInvoiceNumber.Name = "txtInvoiceNumber";
             this.txtInvoiceNumber.Size = new System.Drawing.Size(121, 20);
             this.txtInvoiceNumber.TabIndex = 15;
@@ -267,7 +269,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 316);
+            this.label12.Location = new System.Drawing.Point(17, 297);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(85, 13);
             this.label12.TabIndex = 14;
@@ -276,7 +278,7 @@
             // datePayment
             // 
             this.datePayment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datePayment.Location = new System.Drawing.Point(108, 366);
+            this.datePayment.Location = new System.Drawing.Point(108, 347);
             this.datePayment.Name = "datePayment";
             this.datePayment.Size = new System.Drawing.Size(121, 20);
             this.datePayment.TabIndex = 27;
@@ -434,7 +436,7 @@
             this.greenToolStripMenuItem2,
             this.steelToolStripMenuItem2});
             this.backgroundToolStripMenuItem2.Name = "backgroundToolStripMenuItem2";
-            this.backgroundToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.backgroundToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
             this.backgroundToolStripMenuItem2.Text = "Background";
             // 
             // goldToolStripMenuItem2
@@ -461,7 +463,7 @@
             // exitToolStripMenuItem2
             // 
             this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
-            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
             this.exitToolStripMenuItem2.Text = "Exit";
             this.exitToolStripMenuItem2.Click += new System.EventHandler(this.exitToolStripMenuItem2_Click);
             // 
@@ -497,7 +499,7 @@
             // 
             // btnInvoiceSearchNumber
             // 
-            this.btnInvoiceSearchNumber.Location = new System.Drawing.Point(236, 312);
+            this.btnInvoiceSearchNumber.Location = new System.Drawing.Point(236, 293);
             this.btnInvoiceSearchNumber.Name = "btnInvoiceSearchNumber";
             this.btnInvoiceSearchNumber.Size = new System.Drawing.Size(22, 20);
             this.btnInvoiceSearchNumber.TabIndex = 38;
@@ -588,11 +590,21 @@
             this.picBackground.TabIndex = 32;
             this.picBackground.TabStop = false;
             // 
-            // Form1
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 250);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(790, 13);
+            this.label14.TabIndex = 47;
+            this.label14.Text = resources.GetString("label14.Text");
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 501);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.btnRemoveAllInvoiceItems);
             this.Controls.Add(this.btnRemoveInvoiceItem);
             this.Controls.Add(this.comboInvoiceItems);
@@ -632,8 +644,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.picBackground);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Main";
+            this.Text = "Invoice";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).EndInit();
@@ -702,6 +714,7 @@
         private System.Windows.Forms.ComboBox comboInvoiceItems;
         private System.Windows.Forms.Button btnRemoveInvoiceItem;
         private System.Windows.Forms.Button btnRemoveAllInvoiceItems;
+        private System.Windows.Forms.Label label14;
     }
 }
 

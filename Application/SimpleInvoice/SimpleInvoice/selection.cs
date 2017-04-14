@@ -13,7 +13,7 @@ namespace SimpleInvoice
     public partial class Selection : Form
     {
 
-        Form1 mainform;
+        Main mainform;
         List<Customer> customersList;
 
         public Selection()
@@ -21,7 +21,7 @@ namespace SimpleInvoice
             InitializeComponent();
         }
 
-        public void updateInterface(string title, List<Customer> customers, Form1 form)
+        public void updateInterface(string title, List<Customer> customers, Main form)
         {
             labelTitle.Text = title;
             mainform = form;
@@ -42,12 +42,19 @@ namespace SimpleInvoice
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-
+            if(listItems.SelectedItem != null)
+            {
+                string[] splitItems;
+                splitItems = listItems.SelectedItem.ToString().Split(':');
+                mainform.setCurrentCustomer(customersList[int.Parse(splitItems[0])]);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please Select a customer from the list or cancel.");
+            }
             //MessageBox.Show(listItems.SelectedItem.ToString());
-            string[] splitItems;
-            splitItems = listItems.SelectedItem.ToString().Split(':');
-            mainform.setCurrentCustomer(customersList[int.Parse(splitItems[0])]);
-            this.Close();
+
             
         }
     }
