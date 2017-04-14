@@ -375,18 +375,35 @@ namespace SimpleInvoice
             //validation checks
             if(currentInvoice != null)
             {
-                //update invoice
-                currentInvoice.PaymentDate = datePayment.Value;
-                currentInvoice.TotalCost = double.Parse(txtInvoiceTotal.Text);
-
-                List<string> invoiceItems = new List<string>();
-                //loop through and assign items in list to the invoice items
-                for (int i = 0; i < listboxInvoiceItems.Items.Count; i++)
+                if(listboxInvoiceItems.Items.Count != 0)
                 {
-                    invoiceItems.Add(listboxInvoiceItems.Items[i].ToString());
+                    double p = 0;
+                    if(!double.TryParse(txtInvoiceTotal.Text,out p))
+                    {
+                        //update invoice
+                        currentInvoice.PaymentDate = datePayment.Value;
+                        currentInvoice.TotalCost = double.Parse(txtInvoiceTotal.Text);
+
+                        List<string> invoiceItems = new List<string>();
+                        //loop through and assign items in list to the invoice items
+                        for (int i = 0; i < listboxInvoiceItems.Items.Count; i++)
+                        {
+                            invoiceItems.Add(listboxInvoiceItems.Items[i].ToString());
+                        }
+                        //update this list to the invoice
+                        currentInvoice.Items = invoiceItems;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a numberical value!");
+                    }
+
                 }
-                //update this list to the invoice
-                currentInvoice.Items = invoiceItems;
+                else
+                {
+                    MessageBox.Show("An Invoice must have items, add some below!");
+                }
+
             }
             else
             {
