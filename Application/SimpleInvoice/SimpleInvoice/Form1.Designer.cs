@@ -499,6 +499,7 @@
             this.btnInvoiceSearchNumber.TabIndex = 38;
             this.btnInvoiceSearchNumber.Text = "Q";
             this.btnInvoiceSearchNumber.UseVisualStyleBackColor = true;
+            this.btnInvoiceSearchNumber.Click += new System.EventHandler(this.btnInvoiceSearchNumber_Click);
             // 
             // label9
             // 

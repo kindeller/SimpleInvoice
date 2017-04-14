@@ -10,11 +10,12 @@ namespace SimpleInvoice
     public class Customer
     {
 
-        public static int IDCounter = 0;
+        public static int IDCounter = 1;
 
-        public Customer() { IDCounter++; }
+        //empty constructor
+        public Customer() { }
 
-        //contstructor
+        //contstructor for storing to array
         public Customer(int id, string fn, string ln, int cont, string add)
         {
             CustomerID = id;

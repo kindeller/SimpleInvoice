@@ -12,9 +12,13 @@ namespace SimpleInvoice
 {
     public partial class Form1 : Form
     {
+        //saved customer and invoices arrays
         Customer[] CustomerList = new Customer[1];
         Invoice[] InvoiceList = new Invoice[1];
+
+        //displayed data
         Customer currentCustomer;
+        List<Invoice> currentCustomerInvoices;
         Invoice currentInvoice;
 
         public Form1()
@@ -60,21 +64,21 @@ namespace SimpleInvoice
             return foundCustomers;
         }
 
-        private List<Customer> searchCustomerID(int id)
+        private Customer searchCustomerID(int id)
         {
-            List<Customer> foundCustomers = new List<Customer>();
+            Customer foundCustomer = new Customer();
 
             for (int index = 0; index < CustomerList.Length; index++)
             {
                 if (CustomerList[index].CustomerID == id)
                 {
-                    foundCustomers.Add(CustomerList[index]);
+                    foundCustomer = CustomerList[index];
                 }
             }
-            return foundCustomers;
+            return foundCustomer;
         }
 
-        private List<Invoice> searchCustomerInvoice(int customerID)
+        private List<Invoice> searchCustomerInvoices(int customerID)
         {
             List<Invoice> invoices = new List<Invoice>();
 
@@ -92,6 +96,24 @@ namespace SimpleInvoice
             return invoices;
         }
 
+        private Invoice searchCustomerInvoiceID(int invoiceID)
+        {
+            Invoice foundInvoice = new Invoice();
+
+            //loop through invoices
+            foreach (Invoice inv in InvoiceList)
+            {
+                //find those that match customer id
+                if (inv.InvoiceID == invoiceID)
+                {
+                    //add to list
+                    foundInvoice = inv;
+                }
+            }
+            //return list
+            return foundInvoice;
+        }
+
         public void setCurrentCustomer(Customer cust)
         {
             currentCustomer = cust;
@@ -100,12 +122,41 @@ namespace SimpleInvoice
 
         private void updateCustomer()
         {
+            clearInput();
             txtCustomerNumber.Text = currentCustomer.CustomerID.ToString();
             txtCustomerFirstName.Text = currentCustomer.FirstName;
             txtCustomerLastName.Text = currentCustomer.LastName;
             txtCustomerContact.Text = currentCustomer.ContactNumber.ToString();
             txtCustomerAddress.Text = currentCustomer.Address;
-            
+            updateCustomerInvoiceList();
+        }
+
+        private void clearInput()
+        {
+            listCustomerInvoices.Items.Clear();
+            listInvoiceItems.Items.Clear();
+            txtCustomerAddress.Text = "";
+            txtCustomerContact.Text = "";
+            txtCustomerFirstName.Text = "";
+            txtCustomerLastName.Text = "";
+            txtCustomerNumber.Text = "";
+            txtInvoiceNumber.Text = "";
+            txtInvoiceTotal.Text = "";
+            datePayment.Text = "";
+        }
+
+        public void updateCustomerInvoiceList()
+        {
+            currentCustomerInvoices = searchCustomerInvoices(currentCustomer.CustomerID);
+            if(currentCustomerInvoices.Count > 0)
+            {
+                foreach (Invoice inv in currentCustomerInvoices)
+                {
+                    string str = $"{inv.InvoiceID}: - Total Cost: {inv.TotalCost} - Date: {inv.PaymentDate.ToString()}";
+                    listCustomerInvoices.Items.Add(str);
+                }
+            }
+
         }
 
         private void updateInvoice()
@@ -291,31 +342,36 @@ namespace SimpleInvoice
 
         private void btnCustomerInvoicesShow_Click(object sender, EventArgs e)
         {
+            string[] itemStings = listCustomerInvoices.SelectedItem.ToString().Split(':');
+            currentInvoice = searchCustomerInvoiceID(int.Parse(itemStings[0]));
+            updateInvoice();
+
+
         }
 
         private void btnCustomerSearchNumber_Click(object sender, EventArgs e)
         {
-            List<Customer> foundCustomers = new List<Customer>();
-            foundCustomers = searchCustomerID(int.Parse(txtCustomerNumber.Text));
+            Customer foundCustomer = new Customer();
+            foundCustomer = searchCustomerID(int.Parse(txtCustomerNumber.Text));
 
-            if (foundCustomers.Count <= 1)
-            {
-                if (foundCustomers.Count < 1)
+                if (foundCustomer.FirstName == null)
                 {
                     MessageBox.Show("No Customers matching that ID Found!");
                 }
                 else
                 {
-                    currentCustomer = foundCustomers[0];
+                    currentCustomer = foundCustomer;
                     updateCustomer();
                 }
-            }
-            else
-            {
-                Selection selectCustomer = new Selection();
-                selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
-                selectCustomer.ShowDialog();
-            }
+
+        }
+
+        private void btnInvoiceSearchNumber_Click(object sender, EventArgs e)
+        {
+            currentInvoice = searchCustomerInvoiceID(int.Parse(txtInvoiceNumber.Text));
+            updateInvoice();
+            currentCustomer = searchCustomerID(currentInvoice.CustomerID);
+            updateCustomer();
         }
     }
 }
