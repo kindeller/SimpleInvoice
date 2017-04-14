@@ -85,6 +85,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.comboInvoiceItems = new System.Windows.Forms.ComboBox();
             this.picBackground = new System.Windows.Forms.PictureBox();
+            this.btnRemoveInvoiceItem = new System.Windows.Forms.Button();
+            this.btnRemoveAllInvoiceItems = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
             this.SuspendLayout();
@@ -345,9 +347,9 @@
             // 
             // btnInvoiceAddItem
             // 
-            this.btnInvoiceAddItem.Location = new System.Drawing.Point(719, 456);
+            this.btnInvoiceAddItem.Location = new System.Drawing.Point(695, 454);
             this.btnInvoiceAddItem.Name = "btnInvoiceAddItem";
-            this.btnInvoiceAddItem.Size = new System.Drawing.Size(62, 23);
+            this.btnInvoiceAddItem.Size = new System.Drawing.Size(86, 23);
             this.btnInvoiceAddItem.TabIndex = 33;
             this.btnInvoiceAddItem.Text = "Add Item";
             this.btnInvoiceAddItem.UseVisualStyleBackColor = true;
@@ -459,8 +461,9 @@
             // exitToolStripMenuItem2
             // 
             this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
-            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
+            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem2.Text = "Exit";
+            this.exitToolStripMenuItem2.Click += new System.EventHandler(this.exitToolStripMenuItem2_Click);
             // 
             // btnCustomerSearchNumber
             // 
@@ -553,7 +556,7 @@
             "Shampoo"});
             this.comboInvoiceItems.Location = new System.Drawing.Point(286, 456);
             this.comboInvoiceItems.Name = "comboInvoiceItems";
-            this.comboInvoiceItems.Size = new System.Drawing.Size(416, 21);
+            this.comboInvoiceItems.Size = new System.Drawing.Size(403, 21);
             this.comboInvoiceItems.TabIndex = 44;
             // 
             // picBackground
@@ -565,11 +568,33 @@
             this.picBackground.TabIndex = 32;
             this.picBackground.TabStop = false;
             // 
+            // btnRemoveInvoiceItem
+            // 
+            this.btnRemoveInvoiceItem.Location = new System.Drawing.Point(603, 419);
+            this.btnRemoveInvoiceItem.Name = "btnRemoveInvoiceItem";
+            this.btnRemoveInvoiceItem.Size = new System.Drawing.Size(86, 23);
+            this.btnRemoveInvoiceItem.TabIndex = 45;
+            this.btnRemoveInvoiceItem.Text = "Remove Item";
+            this.btnRemoveInvoiceItem.UseVisualStyleBackColor = true;
+            this.btnRemoveInvoiceItem.Click += new System.EventHandler(this.btnRemoveInvoiceItem_Click);
+            // 
+            // btnRemoveAllInvoiceItems
+            // 
+            this.btnRemoveAllInvoiceItems.Location = new System.Drawing.Point(695, 419);
+            this.btnRemoveAllInvoiceItems.Name = "btnRemoveAllInvoiceItems";
+            this.btnRemoveAllInvoiceItems.Size = new System.Drawing.Size(86, 23);
+            this.btnRemoveAllInvoiceItems.TabIndex = 46;
+            this.btnRemoveAllInvoiceItems.Text = "Remove All";
+            this.btnRemoveAllInvoiceItems.UseVisualStyleBackColor = true;
+            this.btnRemoveAllInvoiceItems.Click += new System.EventHandler(this.btnRemoveAllInvoiceItems_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 501);
+            this.Controls.Add(this.btnRemoveAllInvoiceItems);
+            this.Controls.Add(this.btnRemoveInvoiceItem);
             this.Controls.Add(this.comboInvoiceItems);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnCustomerInvoicesShow);
@@ -675,6 +700,8 @@
         private System.Windows.Forms.ListBox listCustomerInvoices;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboInvoiceItems;
+        private System.Windows.Forms.Button btnRemoveInvoiceItem;
+        private System.Windows.Forms.Button btnRemoveAllInvoiceItems;
     }
 }
 

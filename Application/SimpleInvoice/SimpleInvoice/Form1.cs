@@ -25,6 +25,8 @@ namespace SimpleInvoice
         {
             InitializeComponent();
             initData();
+            Login loginWindow = new Login();
+            loginWindow.ShowDialog();
         }
 
         private void addCustomer(Customer customer)
@@ -426,9 +428,13 @@ namespace SimpleInvoice
 
         private void btnCustomerInvoicesShow_Click(object sender, EventArgs e)
         {
-            string[] itemStings = listCustomerInvoices.SelectedItem.ToString().Split(':');
-            currentInvoice = searchCustomerInvoiceID(int.Parse(itemStings[0]));
-            updateInvoice();
+            if(listCustomerInvoices.SelectedItem != null)
+            {
+                string[] itemStings = listCustomerInvoices.SelectedItem.ToString().Split(':');
+                currentInvoice = searchCustomerInvoiceID(int.Parse(itemStings[0]));
+                updateInvoice();
+            }
+
 
 
         }
@@ -479,6 +485,21 @@ namespace SimpleInvoice
             }
             
             
+        }
+
+        private void btnRemoveInvoiceItem_Click(object sender, EventArgs e)
+        {
+            listboxInvoiceItems.Items.Remove(listboxInvoiceItems.SelectedItem); 
+        }
+
+        private void btnRemoveAllInvoiceItems_Click(object sender, EventArgs e)
+        {
+            listboxInvoiceItems.Items.Clear();
+        }
+
+        private void exitToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
