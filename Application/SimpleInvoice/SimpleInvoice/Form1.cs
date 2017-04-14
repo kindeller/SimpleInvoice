@@ -35,6 +35,14 @@ namespace SimpleInvoice
 
         }
 
+        private void addInvoice(Invoice inv)
+        {
+            growInvoiceArray();
+            //add invoice in last slot;
+            InvoiceList[InvoiceList.Length - 1] = inv;
+
+        }
+
 
         private List<Customer> searchCustomerFirstName(string name)
         {
@@ -134,7 +142,7 @@ namespace SimpleInvoice
         private void clearInput()
         {
             listCustomerInvoices.Items.Clear();
-            listInvoiceItems.Items.Clear();
+            listboxInvoiceItems.Items.Clear();
             txtCustomerAddress.Text = "";
             txtCustomerContact.Text = "";
             txtCustomerFirstName.Text = "";
@@ -147,6 +155,7 @@ namespace SimpleInvoice
 
         public void updateCustomerInvoiceList()
         {
+            listCustomerInvoices.Items.Clear();
             currentCustomerInvoices = searchCustomerInvoices(currentCustomer.CustomerID);
             if(currentCustomerInvoices.Count > 0)
             {
@@ -161,12 +170,14 @@ namespace SimpleInvoice
 
         private void updateInvoice()
         {
+            
             txtInvoiceNumber.Text = currentInvoice.InvoiceID.ToString();
             txtInvoiceTotal.Text = currentInvoice.TotalCost.ToString();
             datePayment.Value = currentInvoice.PaymentDate;
+            listboxInvoiceItems.Items.Clear();
             foreach (string item in currentInvoice.Items)
             {
-                listInvoiceItems.Items.Add(item);
+                listboxInvoiceItems.Items.Add(item);
             }
         }
 
@@ -184,6 +195,20 @@ namespace SimpleInvoice
             
         }
 
+        private void growInvoiceArray()
+        {
+            //copy array
+            Invoice[] tempInvoiceList = InvoiceList;
+            //resize
+            InvoiceList = new Invoice[InvoiceList.Length + 1];
+            //readd values
+            for (int id = 0; id < tempInvoiceList.Length; id++)
+            {
+                InvoiceList[id] = tempInvoiceList[id];
+            }
+
+        }
+
         //iniitalise some data on load
 
         private void initData()
@@ -195,7 +220,7 @@ namespace SimpleInvoice
             cust = new Customer(2, "frank", "sinatra", 0800909090, "1 something way, Funkytown, awesome land");
             CustomerList[1] = cust;
 
-            Invoice inv = new Invoice(1, 1, 20.99, new DateTime(2017, 02, 20), new string[] { "Shampoo", "Apples", "AK-47" });
+            Invoice inv = new Invoice(1, 20.99, new DateTime(2017, 02, 20), new string[] { "Shampoo", "Apples", "AK-47" });
             InvoiceList[0] = inv;
         }
 
@@ -243,100 +268,159 @@ namespace SimpleInvoice
         private void btnCustomerAdd_Click(object sender, EventArgs e)
         {
 
+            if(txtCustomerFirstName.Text == "" || txtCustomerLastName.Text == "" || txtCustomerAddress.Text == "")
+            {
+                MessageBox.Show("Please ensure all fields are complete!");
+            }
+            else
+            {
+                //create empty customer object
+                Customer cust = new Customer();
 
-            //create empty customer object
-            Customer cust = new Customer();
+                //get all inputs and assign to new customer
+                cust.CustomerID = Customer.IDCounter;
+                cust.FirstName = txtCustomerFirstName.Text;
+                cust.LastName = txtCustomerLastName.Text;
+                cust.ContactNumber = int.Parse(txtCustomerContact.Text);
+                cust.Address = txtCustomerAddress.Text;
 
-            //get all inputs and assign to new customer
-            cust.CustomerID = Customer.IDCounter;
-            cust.FirstName = txtCustomerFirstName.Text;
-            cust.LastName = txtCustomerLastName.Text;
-            cust.ContactNumber = int.Parse(txtCustomerContact.Text);
-            cust.Address = txtCustomerAddress.Text;
+                //add this to array
+                addCustomer(cust);
 
-            //add this to array
-            addCustomer(cust);
+                //update current customer
+                currentCustomer = cust;
+                updateCustomer();
+            }
 
-            //update current customer
-            currentCustomer = cust;
-            updateCustomer();
 
         }
 
         private void btnCustomerUpdate_Click(object sender, EventArgs e)
         {
-
+            currentCustomer.FirstName = txtCustomerFirstName.Text;
+            currentCustomer.LastName = txtCustomerLastName.Text;
+            currentCustomer.Address = txtCustomerAddress.Text;
+            currentCustomer.ContactNumber = int.Parse(txtCustomerContact.Text);
         }
+
+
 
 
         //Invoice Functions
 
         private void btnInvoiceAdd_Click(object sender, EventArgs e)
         {
-            //create empty invoice object
-            Invoice inv = new Invoice();
+            if(currentCustomer == null || currentCustomer.FirstName == "")
+            {
+                MessageBox.Show("Please Search or add a customer first!");
+            }
+            else
+            {
+                
+                if(listboxInvoiceItems.Items.Count <= 0)
+                {
+                    MessageBox.Show("Please Add Items to the invoice");
+                }
+                else
+                {
+                    string[] invoiceItems = new string[listboxInvoiceItems.Items.Count];
 
-            //assign values
+                    for (int i = 0; i < listboxInvoiceItems.Items.Count; i++)
+                    {
+                        invoiceItems[i] = listboxInvoiceItems.Items[i].ToString();
+                    }
+                    
+                    //create empty invoice object
+                    Invoice inv = new Invoice(currentCustomer.CustomerID, double.Parse(txtInvoiceTotal.Text), datePayment.Value, invoiceItems);
 
-            //add to list
+                    //add to list
+                    addInvoice(inv);
+                    updateCustomerInvoiceList();
+                }
+            }
         }
 
         private void btnInvoiceUpdate_Click(object sender, EventArgs e)
         {
+            currentInvoice.PaymentDate = datePayment.Value;
+            currentInvoice.TotalCost = double.Parse(txtInvoiceTotal.Text);
 
+            List<string> invoiceItems = new List<string>();
+
+            for (int i = 0; i < listboxInvoiceItems.Items.Count; i++)
+            {
+                invoiceItems.Add(listboxInvoiceItems.Items[i].ToString());
+            }
+            currentInvoice.Items = invoiceItems;
         }
 
         private void btnCustomerSearchFirstName_Click(object sender, EventArgs e)
         {
-            List<Customer> foundCustomers = new List<Customer>();
-            foundCustomers = searchCustomerFirstName(txtCustomerFirstName.Text);
-
-            if(foundCustomers.Count <= 1)
+            if(txtCustomerFirstName.Text != "")
             {
-                if (foundCustomers.Count < 1)
+                List<Customer> foundCustomers = new List<Customer>();
+                foundCustomers = searchCustomerFirstName(txtCustomerFirstName.Text);
+
+                if (foundCustomers.Count <= 1)
                 {
-                    MessageBox.Show("No Customers with that first name found!");
+                    if (foundCustomers.Count < 1)
+                    {
+                        MessageBox.Show("No Customers with that first name found!");
+                    }
+                    else
+                    {
+                        currentCustomer = foundCustomers[0];
+                        updateCustomer();
+                    }
+
                 }
                 else
                 {
-                    currentCustomer = foundCustomers[0];
-                    updateCustomer();
+                    Selection selectCustomer = new Selection();
+                    selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
+                    selectCustomer.ShowDialog();
                 }
 
             }
             else
             {
-                Selection selectCustomer = new Selection();
-                selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
-                selectCustomer.ShowDialog();
+                MessageBox.Show("Please Enter a name!");
             }
-            
+
 
         }
 
         private void btnCustomerSearchLastName_Click(object sender, EventArgs e)
         {
-            List<Customer> foundCustomers = new List<Customer>();
-            foundCustomers = searchCustomerLastName(txtCustomerLastName.Text);
-
-            if (foundCustomers.Count <= 1)
+            if(txtCustomerLastName.Text != "")
             {
-                if (foundCustomers.Count < 1)
+                List<Customer> foundCustomers = new List<Customer>();
+                foundCustomers = searchCustomerLastName(txtCustomerLastName.Text);
+
+                if (foundCustomers.Count <= 1)
                 {
-                    MessageBox.Show("No Customers with that last name found!");
+                    if (foundCustomers.Count < 1)
+                    {
+                        MessageBox.Show("No Customers with that last name found!");
+                    }
+                    else
+                    {
+                        currentCustomer = foundCustomers[0];
+                        updateCustomer();
+                    }
                 }
                 else
                 {
-                    currentCustomer = foundCustomers[0];
-                    updateCustomer();
+                    Selection selectCustomer = new Selection();
+                    selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
+                    selectCustomer.ShowDialog();
                 }
             }
             else
             {
-                Selection selectCustomer = new Selection();
-                selectCustomer.updateInterface("Select a Customer", foundCustomers, this);
-                selectCustomer.ShowDialog();
+                MessageBox.Show("Please enter a name!");
             }
+
             
         }
 
@@ -351,8 +435,10 @@ namespace SimpleInvoice
 
         private void btnCustomerSearchNumber_Click(object sender, EventArgs e)
         {
-            Customer foundCustomer = new Customer();
-            foundCustomer = searchCustomerID(int.Parse(txtCustomerNumber.Text));
+            if(txtCustomerNumber.Text != "")
+            {
+                Customer foundCustomer = new Customer();
+                foundCustomer = searchCustomerID(int.Parse(txtCustomerNumber.Text));
 
                 if (foundCustomer.FirstName == null)
                 {
@@ -363,15 +449,36 @@ namespace SimpleInvoice
                     currentCustomer = foundCustomer;
                     updateCustomer();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please input a value!");
+            }
 
         }
 
         private void btnInvoiceSearchNumber_Click(object sender, EventArgs e)
         {
             currentInvoice = searchCustomerInvoiceID(int.Parse(txtInvoiceNumber.Text));
-            updateInvoice();
             currentCustomer = searchCustomerID(currentInvoice.CustomerID);
             updateCustomer();
+            updateInvoice();
+
+        }
+
+        private void btnInvoiceAddItem_Click(object sender, EventArgs e)
+        {
+            if(currentCustomer != null || currentInvoice != null)
+            {
+
+                listboxInvoiceItems.Items.Add(comboInvoiceItems.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Please create or select a customer first!");
+            }
+            
+            
         }
     }
 }

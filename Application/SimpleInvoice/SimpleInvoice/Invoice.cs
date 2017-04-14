@@ -8,17 +8,23 @@ namespace SimpleInvoice
 {
     public class Invoice
     {
+        public static int IDCounter = 1;
 
         public Invoice() { }
 
         //constructor
-        public Invoice(int id, int custID, double total, DateTime pay, string[] items)
+        public Invoice(int custID, double total, DateTime pay, string[] items)
         {
-            InvoiceID = id;
+            InvoiceID = IDCounter;
             CustomerID = custID;
             TotalCost = total;
             PaymentDate = pay;
-            Items = items;
+            Items = new List<string>();
+            foreach (string item in items)
+            {
+                Items.Add(item);
+            }
+            IDCounter++;
         }
 
         //properties
@@ -26,27 +32,16 @@ namespace SimpleInvoice
         public int CustomerID { get; set; }
         public double TotalCost { get; set; }
         public DateTime PaymentDate { get; set; }
-        public string[] Items { get; set; }
+        public List<string> Items { get; set; }
 
         public void addItem(string item)
         {
-            GrowItemsArray();
-
-            Items[Items.Length - 1] = item;
-
+            Items.Add(item);
         }
 
-        private void GrowItemsArray()
+        public void removeItem(string item)
         {
-            //copy array
-            string[] tempItemsList = Items;
-            //resize
-            Items = new string[Items.Length + 1];
-            //readd values
-            for (int id = 0; id < tempItemsList.Length; id++)
-            {
-                Items[id] = tempItemsList[id];
-            }
+            Items.Remove(item);
         }
 
     }

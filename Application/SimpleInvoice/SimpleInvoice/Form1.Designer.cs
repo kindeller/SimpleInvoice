@@ -83,7 +83,7 @@
             this.listCustomerInvoices = new System.Windows.Forms.ListBox();
             this.btnCustomerInvoicesShow = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.comboItemsList = new System.Windows.Forms.ComboBox();
+            this.comboInvoiceItems = new System.Windows.Forms.ComboBox();
             this.picBackground = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBackground)).BeginInit();
@@ -351,6 +351,7 @@
             this.btnInvoiceAddItem.TabIndex = 33;
             this.btnInvoiceAddItem.Text = "Add Item";
             this.btnInvoiceAddItem.UseVisualStyleBackColor = true;
+            this.btnInvoiceAddItem.Click += new System.EventHandler(this.btnInvoiceAddItem_Click);
             // 
             // lblInvoiceItems
             // 
@@ -537,11 +538,11 @@
             this.label13.TabIndex = 43;
             this.label13.Text = "New Invoice Item: ";
             // 
-            // comboItemsList
+            // comboInvoiceItems
             // 
-            this.comboItemsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboItemsList.FormattingEnabled = true;
-            this.comboItemsList.Items.AddRange(new object[] {
+            this.comboInvoiceItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboInvoiceItems.FormattingEnabled = true;
+            this.comboInvoiceItems.Items.AddRange(new object[] {
             "Apples",
             "Cilit Bang",
             "Conditioner",
@@ -550,10 +551,10 @@
             "Oranges",
             "Orichalcum Ore",
             "Shampoo"});
-            this.comboItemsList.Location = new System.Drawing.Point(286, 456);
-            this.comboItemsList.Name = "comboItemsList";
-            this.comboItemsList.Size = new System.Drawing.Size(416, 21);
-            this.comboItemsList.TabIndex = 44;
+            this.comboInvoiceItems.Location = new System.Drawing.Point(286, 456);
+            this.comboInvoiceItems.Name = "comboInvoiceItems";
+            this.comboInvoiceItems.Size = new System.Drawing.Size(416, 21);
+            this.comboInvoiceItems.TabIndex = 44;
             // 
             // picBackground
             // 
@@ -569,7 +570,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 501);
-            this.Controls.Add(this.comboItemsList);
+            this.Controls.Add(this.comboInvoiceItems);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnCustomerInvoicesShow);
             this.Controls.Add(this.label9);
@@ -673,7 +674,7 @@
         private System.Windows.Forms.Button btnCustomerInvoicesShow;
         private System.Windows.Forms.ListBox listCustomerInvoices;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboItemsList;
+        private System.Windows.Forms.ComboBox comboInvoiceItems;
     }
 }
 
